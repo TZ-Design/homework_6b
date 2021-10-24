@@ -1,0 +1,711 @@
+* {
+  box-sizing: border-box;
+}
+
+/* use consistent font and margin for the body */
+body {
+  font-size: 14px;
+  font-family: "Open Sans";
+  text-align: left;
+  margin-top: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
+  position: relative;
+}
+
+.container{
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 120px; /* height of your footer */
+}
+
+/* top navigation bar */
+.navbar{
+  overflow: hidden;
+  padding: 10px 0px 0px 0px;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+h3{
+  font-size: 15px;
+}
+
+ul{
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar a{
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 80px;
+  text-decoration: none;
+  font-size: 17px;
+  color: black;
+}
+
+/* six columns layout for top nav bar */
+.sixcols a{
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+  text-decoration: none;
+  font-size: 17px;
+  color: black;
+}
+
+.sixcols img{
+  width: 80%;
+  height: auto;
+}
+
+.half img{
+  width: 100%;
+  height: 400px;
+  background-position: center center;
+  object-fit: cover;
+}
+
+/* logo as an img */
+.logoimg{
+  width: 43px;
+  height: 43px;
+  background: url(images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+
+/* use consistent button styling*/
+.button{
+  font-size: 14px;
+  font-family: "Open Sans";
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 205px;
+  height: 55px;
+  background: rgba(0,0,0,1);
+  opacity: 1;
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+.button:hover{
+  color: white;
+  background: #444444;
+}
+
+
+/* set banner image to be responsive with a darker overlay */
+.banner{
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.2)), url("images/banner.png");
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  border: none;
+  position: relative;
+  top: 20%;
+  overflow: hidden;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.block{
+  width: 100%
+}
+
+.products{
+  float: right;
+}
+
+.banner .button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* set product category styling on home page */
+.category{
+  color: white;
+  position: relative;
+  padding-top: 20%;
+  padding-left: 5%;
+  font-family: "Open Sans";
+  font-weight: Bolder;
+  font-size: 25px;
+  opacity: 1;
+  text-align: left;
+
+}
+
+/* tagline styling on home page banner */
+#tagline{
+  color: white;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Open Sans";
+  font-weight: Bolder;
+  font-size: 40px;
+  opacity: 1;
+  text-align: center;
+}
+
+.sixcols{
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0px 0px 0px 0px;
+  grid-gap: auto;
+  width: 100%;
+  height: auto;
+}
+
+/* four columns layout for the shop page */
+.fourcols{
+  display: inline-grid;;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+  height: auto;
+}
+
+.threecols{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 20px;
+  grid-gap: 1em;
+  width: 100%;
+  height: auto;
+}
+
+
+/* two columns layout for the about page */
+.twocols{
+  display: inline-grid;
+  grid-template-columns: 20% auto;
+  padding-top: 30px;
+  padding-left: 20px;
+  justify-content: left;
+  width: 100%;
+  height: auto;
+}
+
+/* set various image styling */
+.imgpreview img{
+  height: 150px;
+  width: auto;
+  margin: 5px;
+  aspect-ratio: 1 / 1;
+  background-position: center center;
+  object-fit: cover;
+}
+
+.focusimg img{
+  background-position: center center;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: auto;
+  height: 500px;
+}
+
+img.selected{
+  border: 2px solid black;
+}
+
+hr{
+  height: 1px;
+  background-color: #C4C4C4;
+  border: none;
+  clear: both;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+/* set the grild for items display*/
+.itempage{
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 3%;
+  padding: 20px;
+  justify-content: left;
+  align-content: center;
+  width: 100%;
+  height: auto;
+}
+
+#itemprice{
+  float: right;
+}
+
+#itemname{
+  float: left;
+}
+
+.item-dscptn{
+   color: #777777;
+}
+
+.btn-group input[type="radio"] {
+  display: none;
+}
+
+label.btn, label.ColorDot{
+  margin: 6px;
+  align-items: center;
+  text-align: center;
+}
+
+
+.btn-group label {
+  display: inline-block;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  padding: 5px 11px;
+  cursor: pointer;
+}
+
+.btn-group input[type="radio"]:checked+label {
+        background-color:rgba(211,211,211,0.2);
+        border: 1px solid black;
+        font-weight:bold;
+}
+
+/* color options are displayed as colored dot */
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  margin-top:4px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* selected color option */
+#selectedcolor{
+  /* border: 2px solid #333333; */
+  background-color: rgba(75, 34, 11, 0.6);
+}
+
+#color2{
+  background-color: #ED9F9F;
+}
+
+#color3{
+  background-color: #D9CBA7;
+}
+
+#color4{
+  background-color: #AACAD1;
+}
+
+/* set the stylings for item detail page elements */
+p.productname, p.price{
+  font-family: "Open Sans";
+  font-weight: normal;
+  font-size: 18px;
+  color: black;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+p.productname{
+  float: left;
+  /* display: inline-block; */
+}
+
+p.price{
+  float: right;
+  /* display: inline-block; */
+}
+
+p.description{
+  font-family: "Open Sans";
+  font-weight: normal;
+  font-size: 15px;
+  color: #C4C4C4;
+  display: block;
+  clear: both;
+}
+
+.item{
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.item p{
+  padding: 5px;
+}
+
+.item:hover {
+  background:#f9f9f9;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+#addcart{
+  width: 160px;
+}
+
+ /*cart page layout */
+.cartPage{
+  display: inline-grid;
+  grid-template-columns: 65% 25%;
+  grid-gap: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: left;
+  width: 100%;
+  height: auto;
+}
+/* 
+.cartPage img{
+  width: 200px;
+  height: 150px;
+  /*background-repeat: no-repeat;*/
+  /* background-position: center center;
+  background-size: auto;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 50px;
+} */ 
+
+.itemSummary p.faketext{
+  color: #888888;
+}
+
+.orderSummary p.price{
+  float: right;
+}
+
+
+.orderSummary{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: auto;
+}
+
+
+/* half and half display layout for the about page */
+.half{
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-gap: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: left;
+  width: 100%;
+  height: auto;
+}
+
+.half h2{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.half p{
+  padding: 20px;
+  color: #555555;
+  line-height: 2;
+}
+
+/* back text button styling */
+.back{
+  cursor: pointer;
+  color: #555555;
+}
+
+
+/* footer section styling */
+footer{
+  align-content: center;
+  clear: both;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer > p{
+  text-align: center;
+  color: #888888;
+  font-size: 13px;
+  margin: 8px;
+}
+
+
+/* filter section styling on shop page */
+.filter{
+  float: left;
+}
+
+.filter li {
+  list-style: none;
+  text-align: left;
+  padding: 15px 0px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #555555;
+}
+
+/* added interactivity for hover effect*/
+.filter li:hover {
+  cursor: pointer;
+  color: #000000;
+}
+
+
+li.active {
+  color: black;
+  text-decoration: underline;
+}
+
+a.active{
+  text-decoration: underline;
+}
+
+.quant{
+  float: left;
+}
+
+
+/* checkout quantity and add to cart section on item detail page */
+#quantity{
+  width: 65px;
+  height: 50px;
+  border: solid 1px #D4D4D4;
+  border-radius: 5px;
+  margin: 4px 2px;
+  margin-bottom: 15px;
+}
+
+.itemQ{
+  width: 65px;
+  height: 40px;
+  border: solid 1px #D4D4D4;
+  border-radius: 5px;
+  margin: 4px 2px;
+}
+
+#addcart{
+  float: right;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+input[type="number"] {
+  font-size: 15px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* product category images styling on the home page */
+#bestSeller1{
+  width: 300px;
+  height: 240px;
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.1)), url("images/bs1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#bestSeller2{
+  width: 300px;
+  height: 240px;
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.1)), url("images/bs2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#bestSeller3{
+  width: 300px;
+  height: 240px;
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.1)), url("images/bs3.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#bestSeller4{
+  width: 300px;
+  height: 240px;
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.1)), url("images/bs4.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* product listing images styling on the shop page from 1-9*/
+#product1{
+  width: 300px;
+  height: 240px;
+  background:url("images/p1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#p2{
+  width: 300px;
+  height: 240px;
+  background:url("images/p2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#product3{
+  width: 300px;
+  height: 240px;
+  background:url("images/p3.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#p4{
+  width: 300px;
+  height: 240px;
+  background:url("images/p4.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#p5{
+  width: 300px;
+  height: 240px;
+  background:url("images/p5.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#p6{
+  width: 300px;
+  height: 240px;
+  background:url("images/p6.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#product7{
+  width: 300px;
+  height: 240px;
+  background:url("images/p7.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#p8{
+  width: 300px;
+  height: 240px;
+  background:url("images/p8.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+#product9{
+  width: 300px;
+  height: 240px;
+  background:url("images/p9.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+td{
+  text-align: left;
+  padding: 8px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  color: #333333;
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0.83em;
+}
+

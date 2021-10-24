@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+	<title>Product</title>
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<div class="container">
+		<!-- used a grid six column layout to render top navigation -->
+		<div class="sixcols">
+			<a href="index.html"><img src="images/logo.svg" alt="fluff stuff logo"></a>
+  			<a href="index.html">Home</a>
+  			<a href="shop.html" class="active">Shop</a>
+  			<a href="about.html">About</a>
+  			<a href="login.html">Login</a>
+  			<a href="cart.html" id="navCart">Cart</a>
+		</div>
+
+		<!-- back button -->
+		<div class="twocols">
+    		<p class="back">&lt;BACK </p>
+		</div>
+
+		<!-- product image thumbnails -->
+		<div class="itempage">
+			<div class="imgpreview">
+				<!-- image attribution: Nathan Oakley https://unsplash.com/photos/Ad3E_eT2bmM-->
+				<img src="images/p1.png" class="selected" alt="bed pillow thumbnail">
+				<img src="images/p1.png" alt="bed pillow thumbnail">
+				<img src="images/p1.png" alt="bed pillow thumbnail">
+			</div>
+
+			<!-- focus image (as chosen from the thumbnail section) -->
+			<div class="focusimg">
+				<!-- image attribution: Nathan Oakley https://unsplash.com/photos/Ad3E_eT2bmM-->
+				<img src="images/p1.png" alt="focused image bed pillow">
+			</div>
+
+			<!-- product descriptions with name and price -->
+			<div class="itemdescription">
+				<h2 id="itemname">Classic Bed Pillow</h2>
+				<h2 id="itemprice" value="49">$49</h2>
+				<br>
+				<hr>
+
+				<!-- color options -->
+				<p>Color Options: &nbsp <span id="colorSelected"></span></p>
+				<div class="btn-group">
+					<input type="radio" name="colorOptions" id="coloroption1" value="Rainy Day" checked>
+					<label class="ColorDot" for="coloroption1">
+					<span class="dot" id="selectedcolor"></span>
+					Rainy Day</label>
+
+				<br>
+				<input type="radio" name="colorOptions" id="coloroption2" value="After School Special">
+				<label class="ColorDot" for="coloroption2">
+					<span class="dot" id="color2"></span>
+					 After School Special</label>
+
+				<br>
+				<input type="radio" name="colorOptions" id="coloroption3" value="Morning Haze">
+				<label class="ColorDot" for="coloroption3">
+					<span class="dot" id="color3"></span>
+					 Morning Haze
+				</label>
+
+				<br>
+				<input type="radio" name="colorOptions" id="coloroption4" value="Cozy Denim">
+				<label class="ColorDot" for="coloroption4">
+					<span class="dot" id="color4"></span>
+					Cozy Denim
+				</label>
+			</div>
+				<hr>
+
+				<!-- fill options -->
+			<p>Fill Options: &nbsp <span id="fillSelected"></span> </p>
+			<div class="btn-group">
+    			<input type="radio" name="fillOptions" id="filloption1" value="Duck Down" checked>
+					<label class="btn" for="filloption1"> Duck Down </label><br>
+
+    			<input type="radio" name="fillOptions" id="filloption2" value="Hypoallergenic Poly-blend">
+					<label class="btn" for="filloption2">Hypoallergenic Poly-blend</label><br>
+
+    			<input type="radio" name="fillOptions" id="filloption3" value="Memory Foam">
+					<label class="btn" for="filloption3"> Memory Foam</label>
+			</div>
+
+				<hr>
+
+				<!-- checkout section -->
+				<div class="quant">
+  				<input type="number" id="quantity" name="quantity" value="1" min="1" max="10"></div>
+				<button class="button" id="addcart" type="submit">Add To Cart</button>
+				<hr>
+				
+				
+
+				<!-- product details -->
+				<p>DETAIL</p>
+				<p class="item-dscptn">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod dictumst enim a blandit. Donec non habitant libero odio est nec. A et vitae enim a, dignissim vel ac amet. Arcu at at risus sit. </p>
+			</div>
+		</div>
+	</div>
+
+<!-- footer section with contact info and address -->
+	<footer>
+		<hr><br>
+		<p>hello@fluffstuff.com&nbsp;&nbsp;|&nbsp;&nbsp;(800)&nbsp;341-2138&nbsp;&nbsp;|&nbsp;&nbsp;213 Walnut St, Pittsburgh</p>
+		<p>Copyright © 2021 Fluff Stuff. &nbsp;&nbsp;All Rights Reserved.</p>
+	</footer>
+
+</body>

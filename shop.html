@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+    <script src="script.js" async></script>
+    <script src="cart.js" async></script>
+	<title>Shop</title>
+</head>
+
+<body>
+    <!-- used a grid six column layout to render top navigation -->
+	<div class="container">
+        <div class="sixcols">
+            <a href="index.html"><img src="images/logo.svg" alt="fluff stuff logo"></a>
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="about.html">About</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart</a>
+        </div>
+
+<!-- back button -->
+    <div class="twocols">
+        <p class="back">&lt;BACK </p>
+    </div>
+
+<!-- filter column where users can filter by product type -->
+    <div class="filter">
+        <h2>Filter by Type</h2>
+        <ul>
+            <li class="active">All Pillows</li>
+            <li>Couch Pillows</li>
+            <li>Bed Pillows</li>
+            <li>Round Pillows</li>
+            <li>Floor Pouf Pillows</li>
+        </ul>
+
+    </div>
+
+<!-- used a grid layout to display indiviudal products with name, price, and color options -->
+	<div class="products">
+		<div class="threecols">
+			<div class="item"> <a href="product.html">
+                <!-- image attribution: Nathan Oakley https://unsplash.com/photos/Ad3E_eT2bmM-->
+                <div class="blocks" id="product1"><div class="overlay"></div></div>
+                <p class="productname">Classic Bed Pillow</p>
+                <p class="price">$49</p>
+                <p class="description">4 colors available</p></a>
+            </div>
+			
+            <!-- <div class="item"> 
+                <div class="blocks" id="p2"><div class="overlay"></div></div>
+                <p class="productname">Classic Couch Pillow</p>
+                <p class="price">$59</p>
+                <p class="description">3 colors available</p>
+            </div> -->
+
+            <div class="item"> 
+                <!-- image attribution: Stephanie Harvey https://unsplash.com/photos/aK53f8eAzck -->
+                <div class="blocks" id="product3"><div class="overlay"></div></div>
+                <p class="productname">Simple Couch Pillow</p>
+                <p class="price">$39</p>
+                <p class="description">4 colors available</p>
+            </div>
+
+            <!-- <div class="item"> 
+                <div class="blocks" id="p4"><div class="overlay"></div></div>
+                <p class="productname">Cozy Bed Pillow</p>
+                <p class="price">$59</p>
+                <p class="description">2 colors available</p>
+            </div> -->
+
+            <!-- <div class="item"> 
+                <div class="blocks" id="p5"><div class="overlay"></div></div>
+                <p class="productname">Your Favorite Bed Pillow</p>
+                <p class="price">$49</p>
+                <p class="description">4 colors available</p>
+            </div> -->
+
+            <!-- <div class="item">
+                <div class="blocks" id="p6"><div class="overlay"></div></div>
+                <p class="productname">Mini Couch Pillow</p>
+                <p class="price">$29</p>
+                <p class="description">4 colors available</p>
+            </div> -->
+
+            <div class="item">
+                <!-- image attribution: Universal Eye https://unsplash.com/photos/72XYTAYvRic -->
+                <div class="blocks" id="product7"><div class="overlay"></div></div>
+                <p class="productname">Classic Floor Pouf Pillow</p>
+                <p class="price">$39</p>
+                <p class="description">3 colors available</p>
+            </div>
+<!-- 
+            <div class="item">
+                <div class="blocks" id="p8"><div class="overlay"></div></div>
+                <p class="productname">Simple Floor Pouf Pillow</p>
+                <p class="price">$29</p>
+                <p class="description">2 colors available</p>
+            </div> -->
+
+            <div class="item">
+                <!-- image attribution: Julien Lanoy https://unsplash.com/photos/jV5Jqlgp4h0 -->
+                <div class="blocks" id="product9"><div class="overlay"></div></div>
+                <p class="productname">Classic Round Pillow</p>
+                <p class="price">$29</p>
+                <p class="description">3 colors available</p>
+            </div>
+        </div>
+	</div>
+</div>
+
+<!-- footer section with contact info and address -->
+    <footer>
+        <hr><br>
+        <p>hello@fluffstuff.com&nbsp;&nbsp;|&nbsp;&nbsp;(800)&nbsp;341-2138&nbsp;&nbsp;|&nbsp;&nbsp;213 Walnut St, Pittsburgh</p>
+        <p>Copyright © 2021 Fluff Stuff. &nbsp;&nbsp;All Rights Reserved.</p>
+    </footer>
+</body>

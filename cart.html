@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" async></script>
+	<script src="cart.js" async></script>
+	<title>Cart</title>
+</head>
+
+<body>
+	<div class="container">
+		<!-- used a grid six column layout to render top navigation -->
+		<div class="sixcols">
+			<a href="index.html"><img src="images/logo.svg" alt="fluff stuff logo"></a>
+  			<a href="index.html">Home</a>
+  			<a href="shop.html">Shop</a>
+  			<a href="about.html">About</a>
+  			<a href="login.html">Login</a>
+  			<a href="cart.html" class="active" id="navCart">Cart</a>
+		</div>
+
+		<!-- back button -->
+		<div class="twocols">
+    		<p class="back"> &lt; Continue Shopping </p>
+		</div>
+
+		<div class="cartPage">
+			<div class="itemSummary">
+				<table class="show-cart table" id="showCartTable">
+					<tr>
+						<th>Item</th>
+						<th>Color</th>
+						<th>Fill</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>Classic Bed Pillow</td>
+						<td>Cozy Denim</td>
+						<td>Memory Foam</td>
+						<th><input type="number" class="itemQ" name="quantity" value="1" min="1" max="10"></th>
+						<td>$49</td>
+						<th>&#x2715</th>
+					</tr>
+					<tr>
+						<td>Simple Couch Pillow</td>
+						<td>Morning Haze</td>
+						<td>Duck Down</td>
+						<th><input type="number" class="itemQ" name="quantity" value="2" min="1" max="10"></th>
+						<td>$39</td>
+						<th>&#x2715</th>
+					</tr>
+				</table>
+				
+				<br><br><br>
+				<hr>
+				<h4>Shipping and Return Policy</h4>
+				<p class="faketext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat, risus suspendisse a integer velit, sed sed dui, egestas. Ornare fermentum a, ipsum magna lectus natoque at amet. Amet viverra aliquet semper urna consectetur pellentesque senectus convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat, risus suspendisse a integer velit, sed sed dui, egestas. Ornare fermentum a, ipsum magna lectus natoque at amet. Amet viverra aliquet semper urna consectetur pellentesque senectus convallis.</p>
+			</div>
+			<div class="orderSummary">
+				<h2>Order Summary</h2>
+				<hr>
+				<p>Total Items</p>
+				<p id="totalItems">3</p>
+				<p>Delivery Fee</p>
+				<p>Free</p>
+				<p>Total Price</p>
+				<p id="totalPrice">$127</p>
+				<button class="button" id="checkout">Check Out</button>
+			</div>
+		</div>
+
+
+</body>
