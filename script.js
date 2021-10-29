@@ -5,7 +5,6 @@
     //when radio button selection change, display the new selection value
     function detectColorChange(event) {
         document.getElementById('colorSelected').innerHTML = event.target.value;
-        console.log(event.target.value);
     }
     document.querySelectorAll("input[name='colorOptions']").forEach((input) => {
         input.addEventListener('change', detectColorChange);
@@ -18,7 +17,6 @@
     document.querySelectorAll("input[name='fillOptions']").forEach((input) => {
         input.addEventListener('change', detectFillChange);
     });
-
 
     var Cart = [];
     //create array that will hold all ordered products
@@ -213,32 +211,84 @@
     // when button is clicked, grab properities of the item and add to cart
     addCartButton.onclick = function(){
     console.log("button pressed")
+        //store product name
         var name = document.getElementById("itemname").textContent; 
-        //console.log(name)
+        localStorage.setItem('itemName',name)
+
+        //store product quantity
         var quantity = Number(document.getElementById("quantity").value);
-        totalItem = Number(totalItem + quantity);
-        //console.log('quantity: ' + quantity)
-        //console.log('total item: ' + totalItem)
+        totalItem = Number(totalItem + quantity); //update total quantity
+        localStorage.setItem("itemQuantity",quantity)
+        localStorage.setItem("cartTotalItems",totalItem)
+
+        console.log('quantity: ' + quantity)
+        console.log('total item: ' + totalItem)
+
         var color = document.querySelector('input[name="colorOptions"]:checked').value;
         document.getElementById('colorSelected').innerHTML = color;
+        localStorage.setItem('itemColor',color)
         //console.log(color)
         var fill = document.querySelector('input[name="fillOptions"]:checked').value;
         document.getElementById('fillSelected').innerHTML = fill;
+        localStorage.setItem('itemFill',fill)
         //console.log(fill)
         var p = document.getElementById("itemprice").textContent;
         var price = p.match(/\d/g);
         price = price.join("");
+        localStorage.setItem('itemPrice',price)
         //console.log(price);
-        document.getElementById("navCart").innerHTML ='Cart (' + totalItem + ')';
+        
+        document.getElementById("navCart").innerHTML ='Cart (' + localStorage.getItem("cartTotalItems") + ')';
+
         shoppingCart.addItemToCart(name, quantity, color, fill, price);
         AddtoCart(name, quantity, color, fill, price);
+        
+
+        var addedItem = {
+            name: name,
+            quantity: quantity,
+            color: color,
+            fill: fill,
+            price: price
+        };
+        localStorage.setItem('added-item', JSON.stringify(addedItem))
 
         //displayShoppingCart();
-        
         //document.getElementById("show-item-name").innerHTML = name;
         //document.getElementById("show-item-price").innerHTML = price;
         //document.getElementById("show-item-color").innerHTML = color;
         //document.getElementById("show-item-fill").innerHTML = fill;
+    }
+
+    function updateCartTotal(){
+        if (localStorage.getItem("cartTotalItems") !== null){
+            document.getElementById("navCart").innerHTML ='Cart (' + localStorage.getItem("cartTotalItems") + ')';
+            console.log('cart total updated');
+        }
+    }
+    
+    function updatedCartPage(){
+        var newItem  = JSON.parse(localStorage.getItem("added-item"));
+        console.log(newItem)
+        var table = document.getElementById("showCartTable");
+        //console.log('table row count' + table.rows.length)
+        //insert a new row
+        var row = table.insertRow(table.rows.length);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+
+        cell1.innerHTML = newItem.name;
+        cell2.innerHTML = newItem.color;
+        cell3.innerHTML = newItem.fill;
+        cell4.innerHTML = '<td><input type="number" class="itemQ" name="quantity" value="' + newItem.quantity + '" + min="1" max="10"></td>';
+        cell4.setAttribute("value", newItem.quantity);
+        cell5.innerHTML = '$' + newItem.price;
+        cell6.innerHTML = "&#x2715";
+        cell6.className = "remove";
     }
 
 // function displayCart() {

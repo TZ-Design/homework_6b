@@ -5,11 +5,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="style.css">
 	<script src="script.js" async></script>
-	<script src="cart.js" async></script>
+	<!-- <script src="cart.js" async></script> -->
 	<title>Cart</title>
 </head>
 
-<body>
+<body onload="updateCartTotal();updatedCartPage()">
 	<div class="container">
 		<!-- used a grid six column layout to render top navigation -->
 		<div class="sixcols">
@@ -18,7 +18,7 @@
   			<a href="shop.html">Shop</a>
   			<a href="about.html">About</a>
   			<a href="login.html">Login</a>
-  			<a href="cart.html" class="active" id="navCart">Cart</a>
+  			<a href="cart.html" class="active"  id="navCart">Cart</a>
 		</div>
 
 		<!-- back button -->
@@ -41,17 +41,17 @@
 						<td>Classic Bed Pillow</td>
 						<td>Cozy Denim</td>
 						<td>Memory Foam</td>
-						<th><input type="number" class="itemQ" name="quantity" value="1" min="1" max="10"></th>
+						<td><input type="number" class="itemQ" name="quantity" value="1" min="1" max="10"></td>
 						<td>$49</td>
-						<th>&#x2715</th>
+						<td class="remove">&#x2715</td>
 					</tr>
 					<tr>
 						<td>Simple Couch Pillow</td>
 						<td>Morning Haze</td>
 						<td>Duck Down</td>
-						<th><input type="number" class="itemQ" name="quantity" value="2" min="1" max="10"></th>
+						<td><input type="number" class="itemQ" name="quantity" value="2" min="1" max="10"></td>
 						<td>$39</td>
-						<th>&#x2715</th>
+						<td class="remove">&#x2715</td>
 					</tr>
 				</table>
 				

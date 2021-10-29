@@ -8,7 +8,7 @@
 	<script src="script.js" defer></script>
 </head>
 
-<body>
+<body onload="updateCartTotal()">
 	<div class="container">
 		<!-- used a grid six column layout to render top navigation -->
 		<div class="sixcols">
@@ -43,12 +43,12 @@
 			<!-- product descriptions with name and price -->
 			<div class="itemdescription">
 				<h2 id="itemname">Classic Bed Pillow</h2>
-				<h2 id="itemprice" value="49">$49</h2>
+				<h2 id="itemprice" value="49">$49 / each</h2>
 				<br>
 				<hr>
 
 				<!-- color options -->
-				<p>Color Options: &nbsp <span id="colorSelected"></span></p>
+				<p>Color Options: &nbsp <span id="colorSelected">Rainy Day</span></p>
 				<div class="btn-group">
 					<input type="radio" name="colorOptions" id="coloroption1" value="Rainy Day" checked>
 					<label class="ColorDot" for="coloroption1">
@@ -78,7 +78,7 @@
 				<hr>
 
 				<!-- fill options -->
-			<p>Fill Options: &nbsp <span id="fillSelected"></span> </p>
+			<p>Fill Options: &nbsp <span id="fillSelected">Duck Down</span> </p>
 			<div class="btn-group">
     			<input type="radio" name="fillOptions" id="filloption1" value="Duck Down" checked>
 					<label class="btn" for="filloption1"> Duck Down </label><br>
