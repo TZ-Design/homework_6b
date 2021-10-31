@@ -9,7 +9,7 @@
 	<title>Cart</title>
 </head>
 
-<body onload="updateCartTotal();updatedCartPage()">
+<body onload="updateCartItemCount();updatedCartPage()">
 	<div class="container">
 		<!-- used a grid six column layout to render top navigation -->
 		<div class="sixcols">
@@ -37,7 +37,7 @@
 						<th>Price</th>
 						<th></th>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>Classic Bed Pillow</td>
 						<td>Cozy Denim</td>
 						<td>Memory Foam</td>
@@ -52,7 +52,7 @@
 						<td><input type="number" class="itemQ" name="quantity" value="2" min="1" max="10"></td>
 						<td>$39</td>
 						<td class="remove">&#x2715</td>
-					</tr>
+					</tr> -->
 				</table>
 				
 				<br><br><br>
@@ -64,11 +64,11 @@
 				<h2>Order Summary</h2>
 				<hr>
 				<p>Total Items</p>
-				<p id="totalItems">3</p>
+				<p id="totalItems">0</p>
 				<p>Delivery Fee</p>
 				<p>Free</p>
 				<p>Total Price</p>
-				<p id="totalPrice">$127</p>
+				<p id="totalPrice">$0</p>
 				<button class="button" id="checkout">Check Out</button>
 			</div>
 		</div>

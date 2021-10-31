@@ -113,16 +113,6 @@
             }
             return cartCopy;
         }
-
-        // cart : Array
-        // Item : Object/Class
-        // addItemToCart : Function
-        // removeItemFromCart : Function
-        // countCart : Function
-        // totalCart : Function
-        // listCart : Function
-        // saveCart : Function
-        // loadCart : Function
         return obj;
         })();
     
@@ -252,15 +242,9 @@
             price: price
         };
         localStorage.setItem('added-item', JSON.stringify(addedItem))
-
-        //displayShoppingCart();
-        //document.getElementById("show-item-name").innerHTML = name;
-        //document.getElementById("show-item-price").innerHTML = price;
-        //document.getElementById("show-item-color").innerHTML = color;
-        //document.getElementById("show-item-fill").innerHTML = fill;
     }
 
-    function updateCartTotal(){
+    function updateCartItemCount(){
         if (localStorage.getItem("cartTotalItems") !== null){
             document.getElementById("navCart").innerHTML ='Cart (' + localStorage.getItem("cartTotalItems") + ')';
             console.log('cart total updated');
@@ -268,6 +252,7 @@
     }
     
     function updatedCartPage(){
+        document.getElementById("navCart").innerHTML ='Cart (' + localStorage.getItem("cartTotalItems") + ')';
         var newItem  = JSON.parse(localStorage.getItem("added-item"));
         console.log(newItem)
         var table = document.getElementById("showCartTable");
@@ -285,29 +270,39 @@
         cell2.innerHTML = newItem.color;
         cell3.innerHTML = newItem.fill;
         cell4.innerHTML = '<td><input type="number" class="itemQ" name="quantity" value="' + newItem.quantity + '" + min="1" max="10"></td>';
-        cell4.setAttribute("value", newItem.quantity);
+        //cell4.setAttribute("value", newItem.quantity);
         cell5.innerHTML = '$' + newItem.price;
         cell6.innerHTML = "&#x2715";
         cell6.className = "remove";
+        cell6.setAttribute("onclick","removeRow(this)")
+
+        document.getElementById("totalPrice").innerHTML = '$' + newItem.price * newItem.quantity;
+        document.getElementById("totalItems").innerHTML = localStorage.getItem("cartTotalItems");
+        //clearLocalStorage();
     }
 
-// function displayCart() {
-//     var cartArray = shoppingCart.listCart();
-//     var output = "";
-//     for(var i in cartArray) {
-//       output += "<tr>"
-//         + "<td>" + cartArray[i].name + "</td>" 
-//         + "<td>(" + cartArray[i].price + ")</td>"
-//         + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
-//         + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
-//         + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
-//         + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
-//         + " = " 
-//         + "<td>" + cartArray[i].total + "</td>" 
-//         +  "</tr>";
-//     }
-//     $('.show-cart').html(output);
-//     $('.total-cart').html(shoppingCart.totalCart());
-//     $('.total-count').html(shoppingCart.totalCount());
-//   }
-  
+    function clearLocalStorage(){
+        localStorage.removeItem("added-item")
+        localStorage.removeItem("itemName")
+        localStorage.removeItem("itemQuantity")
+        localStorage.removeItem('itemColor')
+        localStorage.removeItem('itemFill')
+        localStorage.removeItem('itemPrice')
+    }
+
+    function removeRow(elem){
+        //console.log('elem' + elem)
+        //document.getElementById("showCartTable").deleteRow(1);
+        var tr = elem.parentNode; // the row to be removed
+        //console.log('tr' + tr)
+        tr.parentNode.removeChild(tr);
+        localStorage.setItem("cartTotalItems", localStorage.getItem("cartTotalItems")-localStorage.getItem("itemQuantity"));
+        updateCartTotal();
+        updateCartItemCount();
+    }
+
+function updateCartTotal(){
+    document.getElementById("totalPrice").innerHTML = '$0';
+    document.getElementById("totalItems").innerHTML = localStorage.getItem("cartTotalItems");
+    console.log("update cart summary")
+}

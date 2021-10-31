@@ -385,7 +385,7 @@ a:link {
  /*cart page layout */
 .cartPage{
   display: inline-grid;
-  grid-template-columns: 65% 25%;
+  grid-template-columns: 70% 25%;
   grid-gap: 100px;
   padding-top: 30px;
   padding-bottom: 30px;
